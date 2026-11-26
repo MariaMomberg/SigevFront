@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+}
+
+.filtros-page {
+  min-height: 100vh;
+  display: flex;
+  background: #070d18;
+  color: white;
+}
+
+.filtros-content {
+  flex: 1;
+  min-width: 0;
+  padding: 28px;
+}
+
+.filtros-header {
+  margin-bottom: 22px;
+}
+
+.filtros-header span,
+.resultado-header > div > span {
+  color: #08e181;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.filtros-header h1 {
+  margin: 5px 0 0;
+  font-size: 23px;
+}
+
+.filtros-card {
+  padding: 20px;
+  background: #0b1422;
+  border: 1px solid #1b344d;
+  border-radius: 15px;
+}
+
+.filtro-busca {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+  margin-bottom: 18px;
+  background: #07111e;
+  border: 1px solid #1b344d;
+  border-radius: 9px;
+}
+
+.filtro-busca input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 13px;
+}
+
+.filtro-busca input::placeholder {
+  color: #6682a5;
+}
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.filtro-item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.filtro-item label {
+  color: #8fa5bf;
+  font-size: 11px;
+}
+
+.filtro-item select {
+  height: 42px;
+  padding: 0 10px;
+  border: 1px solid #1b344d;
+  border-radius: 8px;
+  outline: none;
+  background: #07111e;
+  color: white;
+  cursor: pointer;
+}
+
+.filtro-item select:focus {
+  border-color: #08e181;
+}
+
+.filtros-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.limpar-button,
+.buscar-button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.limpar-button {
+  background: transparent;
+  border: 1px solid #1b344d;
+  color: #9bb0c8;
+}
+
+.limpar-button:hover {
+  border-color: #08e181;
+  color: white;
+}
+
+.buscar-button {
+  border: none;
+  background: #08d977;
+  color: #06111d;
+  font-weight: bold;
+}
+
+.buscar-button:hover {
+  background: #08e181;
+}
+
+.resultado-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 28px 0 14px;
+}
+
+.resultado-header h2 {
+  margin: 5px 0 0;
+  font-size: 18px;
+}
+
+.resultado-count {
+  color: #7187a2;
+  font-size: 11px;
+}
+
+.estacao-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  background: #0b1422;
+  border: 1px solid #1b344d;
+  border-radius: 13px;
+  transition: 0.2s;
+}
+
+.estacao-card:hover {
+  border-color: #08e181;
+  transform: translateY(-1px);
+}
+
+.estacao-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #082d25;
+  font-size: 20px;
+}
+
+.estacao-info {
+  flex: 1;
+}
+
+.estacao-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.estacao-title h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.status-disponivel {
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: rgba(8, 225, 129, 0.1);
+  color: #08e181;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.estacao-info p {
+  margin: 7px 0;
+  color: #8298b2;
+  font-size: 11px;
+}
+
+.estacao-details {
+  display: flex;
+  gap: 15px;
+  color: #a7b8cc;
+  font-size: 10px;
+}
+
+.detalhes-button {
+  padding: 9px 13px;
+  border: 1px solid #1b4650;
+  border-radius: 8px;
+  background: #0b1d2c;
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.detalhes-button:hover {
+  border-color: #08e181;
+  color: #08e181;
+}
+
+@media (max-width: 900px) {
+  .filtros-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .filtros-page {
+    display: block;
+  }
+
+  .filtros-content {
+    padding: 16px;
+  }
+
+  .filtros-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filtros-acoes {
+    flex-direction: column;
+  }
+
+  .limpar-button,
+  .buscar-button {
+    width: 100%;
+  }
+
+  .estacao-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .detalhes-button {
+    width: 100%;
+  }
+
+  .resultado-header {
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

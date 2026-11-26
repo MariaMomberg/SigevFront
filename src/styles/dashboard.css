@@ -1,0 +1,572 @@
+/* ================================
+   SIGEV - DASHBOARD
+================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #070d18;
+  color: #ffffff;
+}
+
+/* ================================
+   ESTRUTURA
+================================ */
+
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  background: #070d18;
+}
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: #0a1322;
+  border-right: 1px solid #1c3048;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* LOGO */
+
+.sidebar-logo {
+  height: 74px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #1c3048;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #08d977;
+  color: #06111d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.sidebar-logo strong {
+  display: block;
+  font-size: 17px;
+  letter-spacing: 0.3px;
+}
+
+.sidebar-logo span {
+  display: block;
+  margin-top: 2px;
+  font-size: 8px;
+  color: #6682a5;
+  letter-spacing: 1px;
+}
+
+/* MENU */
+
+.sidebar-menu {
+  padding: 14px 10px;
+}
+
+.sidebar-link {
+  min-height: 40px;
+  margin-bottom: 5px;
+  padding: 0 12px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8fa9c8;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.sidebar-link:hover {
+  background: #0d2430;
+  color: #ffffff;
+}
+
+.sidebar-link.active {
+  background: #06352f;
+  color: #08e181;
+  border: 1px solid #075e4d;
+}
+
+.sidebar-admin {
+  padding: 8px 10px;
+}
+
+.sidebar-admin p {
+  margin: 8px 12px;
+  color: #506b8e;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+/* USUÁRIO */
+
+.sidebar-user {
+  margin-top: auto;
+  padding: 15px;
+  border-top: 1px solid #1c3048;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #063b34;
+  border: 1px solid #087b61;
+  color: #08e181;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.sidebar-user strong {
+  display: block;
+  font-size: 11px;
+}
+
+.sidebar-user span {
+  display: block;
+  margin-top: 3px;
+  color: #637e9e;
+  font-size: 9px;
+}
+
+/* ================================
+   CONTEÚDO
+================================ */
+
+.dashboard-content {
+  flex: 1;
+  min-width: 0;
+  padding: 28px;
+  overflow-x: hidden;
+}
+
+/* CABEÇALHO */
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.dashboard-header span {
+  color: #7894b7;
+  font-size: 13px;
+}
+
+.dashboard-header h1 {
+  margin: 3px 0 0;
+  font-size: 22px;
+}
+
+.profile-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #063b34;
+  border: 1px solid #087b61;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #08e181;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* ================================
+   STATUS
+================================ */
+
+.status-card {
+  position: relative;
+  min-height: 145px;
+  padding: 22px;
+  margin-bottom: 20px;
+  border: 1px solid #1d3a52;
+  border-radius: 15px;
+  background: linear-gradient(
+    120deg,
+    #0b292a,
+    #0d1727 65%
+  );
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.status-title {
+  color: #08e181 !important;
+  font-size: 10px !important;
+  letter-spacing: 1px;
+}
+
+.station-number {
+  margin-top: 7px;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.station-text {
+  color: #7894b7 !important;
+  font-size: 11px !important;
+}
+
+.map-button {
+  display: block;
+  margin-top: 12px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #08e181;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.status-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+  color: #7792b4;
+}
+
+.status-info strong {
+  color: #ffffff;
+}
+
+.yellow {
+  color: #f4b400 !important;
+}
+
+.red {
+  color: #ff4c5b !important;
+}
+
+.location {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  color: #7792b4;
+  font-size: 10px;
+}
+
+/* ================================
+   TÍTULOS
+================================ */
+
+.dashboard-content section h2 {
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+
+/* ================================
+   ACESSO RÁPIDO
+================================ */
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.quick-card {
+  min-height: 62px;
+  padding: 12px;
+  background: #0c1729;
+  border: 1px solid #1b344d;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quick-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: #10243a;
+  border: 1px solid #25445e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.quick-card strong {
+  display: block;
+  font-size: 12px;
+}
+
+.quick-card span {
+  display: block;
+  margin-top: 4px;
+  color: #6985a7;
+  font-size: 10px;
+}
+
+/* ================================
+   VEÍCULO
+================================ */
+
+.vehicle-section {
+  min-height: 60px;
+  padding: 12px;
+  margin-bottom: 20px;
+  background: #0c1729;
+  border: 1px solid #1b344d;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vehicle-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: #10352f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.vehicle-section strong {
+  display: block;
+  font-size: 12px;
+}
+
+.vehicle-section span {
+  display: block;
+  margin-top: 3px;
+  color: #6985a7;
+  font-size: 10px;
+}
+
+.vehicle-more {
+  margin-left: auto;
+  color: #08e181 !important;
+}
+
+/* ================================
+   ESTAÇÕES
+================================ */
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header button {
+  border: none;
+  background: transparent;
+  color: #08e181;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.stations {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.station-card {
+  min-height: 55px;
+  padding: 10px 12px;
+  background: #0c1729;
+  border: 1px solid #1b344d;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.station-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #071b21;
+  border: 1px solid #075b4b;
+  color: #08e181;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.station-info {
+  flex: 1;
+}
+
+.station-info strong {
+  display: block;
+  font-size: 12px;
+}
+
+.station-info span {
+  display: block;
+  margin-top: 4px;
+  color: #7894b7;
+  font-size: 9px;
+}
+
+.status-badge {
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.status-badge.available {
+  color: #08e181;
+  background: #07372f;
+  border: 1px solid #087b61;
+}
+
+.status-badge.few {
+  color: #f4b400;
+  background: #302a0b;
+  border: 1px solid #806600;
+}
+
+.status-badge.busy {
+  color: #ff5361;
+  background: #35151d;
+  border: 1px solid #82313d;
+}
+
+/* ================================
+   ÚLTIMA RECARGA
+================================ */
+
+.last-charge {
+  margin-top: 20px;
+  min-height: 60px;
+  padding: 12px;
+  background: #0c1729;
+  border: 1px solid #1b344d;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.last-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #1c1938;
+  color: #9a8cff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.last-charge strong {
+  display: block;
+  font-size: 12px;
+}
+
+.last-charge span {
+  display: block;
+  margin-top: 4px;
+  color: #6985a7;
+  font-size: 10px;
+}
+
+.last-charge button {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  color: #08e181;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 800px) {
+  .sidebar {
+    width: 190px;
+  }
+
+  .dashboard-content {
+    padding: 20px;
+  }
+
+  .status-card {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .dashboard {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    position: relative;
+  }
+
+  .sidebar-menu {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .sidebar-link {
+    white-space: nowrap;
+  }
+
+  .sidebar-admin,
+  .sidebar-user {
+    display: none;
+  }
+
+  .dashboard-content {
+    padding: 16px;
+  }
+
+  .status-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .location {
+    position: static;
+  }
+
+  .quick-grid {
+    grid-template-columns: 1fr;
+  }
+}
